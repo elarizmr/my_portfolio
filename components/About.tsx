@@ -17,7 +17,7 @@ export default function About() {
           <div className="bg-white p-3 pb-10 shadow-2xl">
             <div className="relative w-48 h-60 md:w-52 md:h-64">
               <Image
-                src="/images/projects/salam.png"
+                src="/images/projects/ss.jpg"
                 alt="About"
                 fill
                 loading="eager"
