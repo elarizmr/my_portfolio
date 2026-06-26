@@ -25,19 +25,31 @@ export default function Navbar() {
         setActive('')
         return
       }
+
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+
+      if (scrolledToBottom) {
+        setActive(links[links.length - 1].toLowerCase())
+        return
+      }
+
       const sections = ['experience', 'projects', 'about']
+      let current = ''
       for (const id of sections) {
         const el = document.getElementById(id)
         if (el) {
           const rect = el.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActive(id)
-            break
+          if (rect.top <= 100) {
+            current = id
           }
         }
       }
+      setActive(current)
     }
+
     window.addEventListener('scroll', onScroll)
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -48,7 +60,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0">
         <Image
-          src="/images/pp.jpg"
+          src="/images/projects/photo3.png"
           alt="Profile"
           width={56}
           height={56}
