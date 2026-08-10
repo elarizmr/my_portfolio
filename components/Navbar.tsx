@@ -60,7 +60,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0">
         <Image
-          src="/images/projects/photo3.png"
+          src="/images/projects/photo.jpg"
           alt="Profile"
           width={56}
           height={56}
